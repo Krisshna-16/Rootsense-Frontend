@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from "react"
-import { TreePine, Upload, MapPin, Calendar, Search, Filter, Loader2, CheckCircle2, Leaf, Droplets, Sun, Info } from "lucide-react"
+import { TreePine, Upload, MapPin, Calendar, Search, Filter, Loader2, CheckCircle2, Leaf, Droplets, Sun, Info, Heart } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { analyzeTreeImage } from "@/lib/gemini"
 import { getTrees, addTree } from "@/lib/services"
@@ -556,9 +556,14 @@ export default function TreesPage() {
                       <div className={`h-2.5 w-2.5 rounded-full ${healthDots[tree.health] || 'bg-gray-400'}`} />
                       <span className="font-mono text-sm font-medium text-foreground">{tree.tree_id}</span>
                     </div>
-                    <Badge className={healthColors[tree.health] || ''}>
-                      {tree.health}
-                    </Badge>
+                    <div className="flex flex-col items-end gap-1">
+                      <Badge className={healthColors[tree.health] || ''}>
+                        {tree.health}
+                      </Badge>
+                      <Badge variant="outline" className="text-[10px] border-accent text-accent">
+                        Adoption Ready
+                      </Badge>
+                    </div>
                   </div>
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center gap-2 text-muted-foreground">
@@ -569,12 +574,15 @@ export default function TreesPage() {
                       <MapPin className="h-4 w-4" />
                       <span className="truncate">{tree.location}</span>
                     </div>
-                    {tree.created_at && (
-                      <div className="flex items-center gap-2 text-muted-foreground">
-                        <Calendar className="h-4 w-4" />
-                        <span>Added: {new Date(tree.created_at).toLocaleDateString()}</span>
+                    <div className="pt-2 border-t border-border mt-2 flex items-center justify-between">
+                      <div className="flex items-center gap-1 text-[10px] text-muted-foreground">
+                        <Heart className="h-3 w-3" />
+                        Available
                       </div>
-                    )}
+                      <Button size="sm" variant="outline" className="h-7 text-[10px] border-primary text-primary hover:bg-primary/10">
+                        Adopt Me
+                      </Button>
+                    </div>
                   </div>
                 </CardContent>
               </Card>

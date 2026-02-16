@@ -64,9 +64,10 @@
   - Browser tabs organized:
     - Tab 1: Home page
     - Tab 2: Dashboard
-    - Tab 3: Trees (ready to upload)
+    - Tab 3: Trees (ready to upload & adopt)
     - Tab 4: Issues
-    - Tab 5: Impact
+    - Tab 5: Impact (showing badges)
+    - Tab 6: Admin
   - Clear browser cache
   - Disable notifications
   - Close unnecessary apps
@@ -97,6 +98,7 @@
 - [ ] Show tree inventory
 - [ ] Click "Upload Tree"
 - [ ] Upload prepared tree photo
+- [ ] **Demonstrate "Adopt Me" functionality**
 - [ ] Fill in location/species
 - [ ] Submit and wait for AI analysis
 - [ ] Show Gemini API health assessment
@@ -117,6 +119,9 @@
   - ✅ All-in-one platform
   - ✅ Gamified engagement
   - ✅ Measurable impact
+  - ✅ **Tree Adoption & Achievement Badges**
+  - ✅ **Campus Condition Health monitoring**
+  - ✅ **Admin control panel**
 
 ### Q&A Preparation
 - [ ] Be ready to explain tech stack
@@ -204,7 +209,7 @@
 - **42** civic issues tracked
 - **28** issues resolved
 - **87/100** green score
-- **5** main features (pages)
+- **6** main features (Dashboard, Trees, Issues, Impact, Admin, Home)
 
 ---
 
@@ -305,7 +310,7 @@ In case of demo failures, have screenshots of:
 ## ✅ Final Pre-Demo Checklist (5 minutes before)
 
 - [ ] Live site loads perfectly
-- [ ] All 5 pages accessible
+- [ ] All 6 pages accessible
 - [ ] AI analysis tested and working
 - [ ] Printed materials on table
 - [ ] Laptop fully charged

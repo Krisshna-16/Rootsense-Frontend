@@ -1,6 +1,6 @@
 "use client";
 
-import { TreePine, AlertTriangle, Droplets, Leaf, TrendingUp, Clock, MapPin } from "lucide-react"
+import { TreePine, AlertTriangle, Droplets, Leaf, TrendingUp, Clock, MapPin, ThermometerSun, Wind, Sprout, Info } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Area, AreaChart, CartesianGrid, XAxis, YAxis, ResponsiveContainer, Bar, BarChart } from "recharts"
@@ -112,6 +112,62 @@ export default function DashboardPage() {
           </CardContent>
         </Card>
       </div>
+
+      {/* Campus Condition Health Index (NEW) */}
+      <Card className="mb-8 border-primary/20 bg-primary/5">
+        <CardHeader className="pb-4 text-center sm:text-left">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-center justify-center gap-2 sm:justify-start">
+              <Sprout className="h-5 w-5 text-primary" />
+              <CardTitle className="text-lg font-bold text-foreground">Campus Condition Health Index</CardTitle>
+            </div>
+            <Badge className="w-fit self-center bg-primary text-primary-foreground sm:self-auto">Optimized</Badge>
+          </div>
+          <CardDescription>Real-time environmental conditions across campus sensors</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="grid gap-4 sm:grid-cols-3">
+            <div className="flex items-center gap-4 rounded-lg bg-card p-4 border border-border">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500/10 text-blue-500">
+                <Droplets className="h-5 w-5" />
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground">Soil Moisture</p>
+                <div className="flex items-center gap-2">
+                  <span className="text-xl font-bold">64%</span>
+                  <span className="rounded bg-primary/20 px-1 text-[10px] font-bold text-primary">STABLE</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 rounded-lg bg-card p-4 border border-border">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-500/10 text-green-500">
+                <Wind className="h-5 w-5" />
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground">Air Quality (AQI)</p>
+                <div className="flex items-center gap-2">
+                  <span className="text-xl font-bold">42</span>
+                  <span className="rounded bg-primary/20 px-1 text-[10px] font-bold text-primary">EXCELLENT</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 rounded-lg bg-card p-4 border border-border">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-500">
+                <ThermometerSun className="h-5 w-5" />
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground">Ambient Temp</p>
+                <div className="flex items-center gap-2">
+                  <span className="text-xl font-bold">28°C</span>
+                  <span className="rounded bg-orange-500/20 px-1 text-[10px] font-bold text-orange-500">WARM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
 
       {/* Charts Section */}
       <div className="mb-8 grid gap-6 lg:grid-cols-2">

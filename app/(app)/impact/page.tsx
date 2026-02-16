@@ -1,6 +1,6 @@
 "use client"
 
-import { TreePine, Droplets, CheckCircle2, Trophy, Medal, Award, TrendingUp, Zap, Wind, Recycle, Calculator, Info } from "lucide-react"
+import { TreePine, Droplets, CheckCircle2, Trophy, Medal, Award, TrendingUp, Zap, Wind, Recycle, Calculator, Info, AlertTriangle } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
@@ -369,11 +369,101 @@ export default function ImpactPage() {
                   <span className="font-medium text-foreground">92/100</span>
                 </div>
                 <Progress value={92} className="h-2 bg-muted" />
+                <div className="mt-2 grid grid-cols-2 gap-2 text-[10px] text-muted-foreground">
+                  <span className="flex items-center gap-1"><CheckCircle2 className="h-2.5 w-2.5 text-primary" /> Public Health: +12%</span>
+                  <span className="flex items-center gap-1"><CheckCircle2 className="h-2.5 w-2.5 text-primary" /> Property Value: +$2.4M</span>
+                  <span className="flex items-center gap-1"><CheckCircle2 className="h-2.5 w-2.5 text-primary" /> Social Equity: High</span>
+                  <span className="flex items-center gap-1"><CheckCircle2 className="h-2.5 w-2.5 text-primary" /> Event Participation: 84%</span>
+                </div>
               </div>
             </div>
           </div>
         </CardContent>
       </Card>
+
+      {/* Achievements & Badges (NEW) */}
+      <div className="mb-8 grid gap-6 lg:grid-cols-2">
+        <Card className="border-border bg-card">
+          <CardHeader>
+            <div className="flex items-center gap-2">
+              <Trophy className="h-5 w-5 text-yellow-500" />
+              <CardTitle className="text-foreground">Sustainabilty Milestones</CardTitle>
+            </div>
+            <CardDescription>Major campus-wide achievements reached</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="flex items-center gap-4 rounded-lg border border-border bg-secondary/30 p-3">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-yellow-500/10 text-yellow-500">
+                <Medal className="h-6 w-6" />
+              </div>
+              <div>
+                <p className="font-bold text-foreground font-mono">1K TREES MILESTONE</p>
+                <p className="text-xs text-muted-foreground text-balance">Campus reached 1,000+ monitored trees. Status: COMPLETED</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 rounded-lg border border-border bg-secondary/30 p-3">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-500/10 text-blue-500">
+                <Droplets className="h-6 w-6" />
+              </div>
+              <div>
+                <p className="font-bold text-foreground font-mono">WATER SAVER PRO</p>
+                <p className="text-xs text-muted-foreground text-balance">Saved 10,000L through leak reporting. Status: COMPLETED</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 rounded-lg border border-primary/20 bg-primary/5 p-3 animate-pulse">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <Zap className="h-6 w-6" />
+              </div>
+              <div>
+                <p className="font-bold text-primary font-mono">ZERO WASTE CHALLENGE</p>
+                <p className="text-xs text-muted-foreground text-balance">Ongoing monthly goal: Reduce waste by 15%. Status: IN PROGRESS (82%)</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="border-border bg-card">
+          <CardHeader>
+            <div className="flex items-center gap-2">
+              <Medal className="h-5 w-5 text-primary" />
+              <CardTitle className="text-foreground">Top Volunteer Badges</CardTitle>
+            </div>
+            <CardDescription>Recognition for outstanding contributors</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="flex flex-col items-center justify-center p-3 text-center transition-all bg-card border border-border rounded-xl hover:border-primary/50 group">
+                <div className="mb-2 p-3 bg-primary/10 rounded-full group-hover:scale-110 transition-transform">
+                  <TreePine className="h-6 w-6 text-primary" />
+                </div>
+                <p className="text-xs font-bold font-mono">TREE GUARDIAN</p>
+                <p className="text-[10px] text-muted-foreground mt-1">Adopted & maintained 5+ trees</p>
+              </div>
+              <div className="flex flex-col items-center justify-center p-3 text-center transition-all bg-card border border-border rounded-xl hover:border-accent/50 group">
+                <div className="mb-2 p-3 bg-accent/10 rounded-full group-hover:scale-110 transition-transform">
+                  <AlertTriangle className="h-6 w-6 text-accent" />
+                </div>
+                <p className="text-xs font-bold font-mono">ISSUE SOLVER</p>
+                <p className="text-[10px] text-muted-foreground mt-1">Reported 10+ civic issues</p>
+              </div>
+              <div className="flex flex-col items-center justify-center p-3 text-center transition-all bg-card border border-border rounded-xl hover:border-blue-500/50 group opacity-50 grayscale">
+                <div className="mb-2 p-3 bg-blue-500/10 rounded-full">
+                  <Wind className="h-6 w-6 text-blue-500" />
+                </div>
+                <p className="text-xs font-bold font-mono">AIR PURIFIER</p>
+                <p className="text-[10px] text-muted-foreground mt-1">LOCKED: Reduce campus AQI by 5%</p>
+              </div>
+              <div className="flex flex-col items-center justify-center p-3 text-center transition-all bg-card border border-border rounded-xl hover:border-yellow-500/50 group opacity-50 grayscale">
+                <div className="mb-2 p-3 bg-yellow-500/10 rounded-full">
+                  <Award className="h-6 w-6 text-yellow-500" />
+                </div>
+                <p className="text-xs font-bold font-mono">LEADERSHIP GOLD</p>
+                <p className="text-[10px] text-muted-foreground mt-1">LOCKED: Lead a department to #1</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
 
       {/* Leaderboard */}
       <Card className="border-border bg-card">
