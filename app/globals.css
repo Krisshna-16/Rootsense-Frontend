@@ -119,11 +119,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
-<<<<<<< HEAD
 
 /* Custom animations for auth pages */
 @keyframes fade-in {
@@ -131,6 +131,7 @@
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -140,5 +141,3 @@
 .animate-fade-in {
   animation: fade-in 0.5s ease-out;
 }
-=======
->>>>>>> c8f2ef0175ec69b4b6491dffbecacb2acba0b6d3
