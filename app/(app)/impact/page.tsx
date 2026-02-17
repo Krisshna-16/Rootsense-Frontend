@@ -398,6 +398,7 @@ export default function ImpactPage() {
 
         {/* Achievements & Badges (NEW) */}
         <div className="mb-8 grid gap-6 lg:grid-cols-2">
+
           <Card className="border-none bg-white shadow-lg">
             <CardHeader>
               <div className="flex items-center gap-2">

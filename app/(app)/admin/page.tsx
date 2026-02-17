@@ -80,11 +80,7 @@ const issueTrends = [
     { category: "Other", resolved: 10, open: 2 },
 ]
 
-const apiUsage = [
-    { name: "Gemini AI", value: 72, color: "#10b981" },
-    { name: "Supabase", value: 45, color: "#3b82f6" },
-    { name: "Clerk Auth", value: 28, color: "#8b5cf6" },
-]
+
 
 const auditLogs = [
     { id: 1, action: "User Role Updated", target: "Sara Khan", admin: "SuperAdmin", time: "10 mins ago" },
@@ -476,29 +472,6 @@ export default function AdminDashboardPage() {
                                         </BarChart>
                                     </ResponsiveContainer>
                                 </ChartContainer>
-                            </CardContent>
-                        </Card>
-
-                        <Card className="border-none bg-white shadow-lg lg:col-span-2">
-                            <CardHeader>
-                                <CardTitle className="text-slate-900">Third-Party API Health</CardTitle>
-                                <CardDescription className="text-slate-600">Usage quotas and connectivity status</CardDescription>
-                            </CardHeader>
-                            <CardContent>
-                                <div className="grid gap-6 sm:grid-cols-3">
-                                    {apiUsage.map((api) => (
-                                        <div key={api.name} className="space-y-3">
-                                            <div className="flex items-center justify-between text-sm">
-                                                <span className="font-medium text-slate-900">{api.name}</span>
-                                                <span className="text-slate-600">{api.value}% used</span>
-                                            </div>
-                                            <Progress value={api.value} className="h-2" />
-                                            <div className="flex items-center gap-2 text-xs text-emerald-600 font-medium">
-                                                <Server className="h-3 w-3" /> Operational
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
                             </CardContent>
                         </Card>
                     </div>

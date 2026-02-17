@@ -3,10 +3,11 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
-import { LayoutDashboard, TreePine, AlertTriangle, BarChart3, Leaf, Home, Menu, X, Shield } from "lucide-react"
+import { LayoutDashboard, TreePine, AlertTriangle, BarChart3, Leaf, Home, Menu, X, Shield, Map as MapIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { UserButton } from "@clerk/nextjs"
+import { VintageLogo } from "@/components/vintage-logo"
 
 const navigation = [
   { name: "Home", href: "/", icon: Home },
@@ -14,6 +15,7 @@ const navigation = [
   { name: "Trees", href: "/trees", icon: TreePine },
   { name: "Civic Issues", href: "/issues", icon: AlertTriangle },
   { name: "Impact", href: "/impact", icon: BarChart3 },
+  { name: "Map", href: "/map", icon: MapIcon },
   { name: "Admin", href: "/admin", icon: Shield },
 ]
 
@@ -26,10 +28,8 @@ export function MobileNav() {
       {/* Mobile Header */}
       <header className="fixed inset-x-0 top-0 z-50 flex h-14 items-center justify-between border-b border-border bg-card px-4 lg:hidden">
         <div className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-            <Leaf className="h-4 w-4 text-primary-foreground" />
-          </div>
-          <span className="font-bold text-foreground">ROOTSENSE</span>
+          <VintageLogo width={40} height={60} />
+          {/* <span className="font-bold text-foreground">ROOTSENSE</span> */}
         </div>
         <div className="flex items-center gap-4">
           <UserButton afterSignOutUrl="/" />

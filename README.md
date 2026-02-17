@@ -1,190 +1,93 @@
-# 🌳 RootSense
+# RootSense Frontend
 
-**Campus Sustainability Intelligence Platform**
+A modern sustainability intelligence platform for college campuses built with Next.js 16.
 
-RootSense is a comprehensive sustainability platform designed for college campuses to track tree survival, report civic issues, and measure environmental impact using AI-powered insights.
+## 🌱 Features
 
----
+- **Tree Health Tracking**: Monitor tree survival with AI-powered analysis
+- **Civic Issue Reporting**: Report and track environmental issues
+- **Impact Dashboard**: Visualize environmental metrics and achievements
+- **Interactive Campus Map**: Geographic view of trees and issues using Leaflet
+- **Admin Panel**: Comprehensive moderation and analytics tools
+- **Authentication**: Secure user management with Clerk
 
-## 🗺️ HOW TO NAVIGATE - START HERE!
+## 🛠️ Tech Stack
 
-### **The app has 5 pages. Here's how to access them:**
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Authentication**: Clerk
+- **AI**: Google Gemini API
+- **Maps**: Leaflet + OpenStreetMap
+- **Database**: Supabase (optional)
 
-#### **On Desktop (wide screen):**
-👉 **Look at the LEFT SIDEBAR** - Click any of the 5 menu items:
-- 🏠 Home
-- 📊 Dashboard  
-- 🌲 Trees
-- ⚠️ Civic Issues
-- 📈 Impact
-- 🛡️ Admin
+## 🚀 Quick Start
 
-#### **On Mobile/Tablet (small screen):**
-👉 **Tap the HAMBURGER MENU (☰)** in the top-left corner, then select any page
+### Prerequisites
 
-#### **Direct URLs (if needed):**
-- Home: `http://localhost:3000/`
-- Dashboard: `http://localhost:3000/dashboard`
-- Trees: `http://localhost:3000/trees`
-- Issues: `http://localhost:3000/issues`
-- Impact: `http://localhost:3000/impact`
-- Admin: `http://localhost:3000/admin`
+- Node.js 18+
+- npm or yarn
 
----
+### Installation
 
-## 🚀 Quick Start for Judges/Evaluators
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Krisshna-16/Rootsense-Frontend.git
+   cd Rootsense-Frontend
+   ```
 
-### Running the Application
-
-1. **Install Dependencies**
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-2. **Run Development Server**
+3. Set up environment variables:
+   ```bash
+   cp .env.example .env.local
+   ```
+   Then edit `.env.local` with your actual API keys.
+
+4. Run the development server:
    ```bash
    npm run dev
    ```
 
-3. **Open in Browser**
-   ```
-   http://localhost:3000
-   ```
+5. Open [http://localhost:3000](http://localhost:3000)
 
-### Navigation Guide
+## 📁 Project Structure
 
-The application has **5 main sections** accessible via the sidebar (desktop) or mobile menu:
+```
+├── app/                    # Next.js App Router pages
+│   ├── (app)/             # Protected routes
+│   │   ├── dashboard/     # Main dashboard
+│   │   ├── trees/         # Tree inventory
+│   │   ├── issues/        # Civic issues
+│   │   ├── impact/        # Impact metrics
+│   │   └── map/           # Interactive map
+│   ├── admin/             # Admin panel
+│   ├── sign-in/           # Authentication
+│   └── sign-up/
+├── components/            # Reusable components
+│   ├── ui/               # shadcn/ui components
+│   ├── app-sidebar.tsx   # Desktop navigation
+│   ├── mobile-nav.tsx    # Mobile navigation
+│   └── vintage-logo.tsx  # Brand logo
+├── lib/                   # Utilities & data
+│   ├── mock-data.ts      # Demo data
+│   ├── map-data.ts       # Map coordinates
+│   └── gemini.ts         # AI integration
+└── public/               # Static assets
+```
 
-| Section | URL | Description |
-|---------|-----|-------------|
-| **🏠 Home** | `/` | Landing page with overview and features |
-| **📊 Dashboard** | `/dashboard` | Real-time metrics and **Campus Condition Health Index** |
-| **🌲 Trees** | `/trees` | Monitoring, AI health analysis, and **Tree Adoption system** |
-| **⚠️ Civic Issues** | `/issues` | Report and track campus environmental issues |
-| **📈 Impact** | `/impact` | Metrics, leaderboards, and **Achievement Badges** |
-| **🛡️ Admin** | `/admin` | User management and system control (Admin only) |
+## 🌐 Deployment
 
----
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed Vercel deployment instructions.
 
-## ✨ Key Features
+## 📄 License
 
-### 1. Tree Survival Tracking
-- **AI-Powered Analysis**: Upload tree photos for automated health assessment
-- **Location Tracking**: GPS-based tree mapping across campus
-- **Historical Data**: Track tree health trends over time
-- **Survival Metrics**: Monitor tree survival rates and identify at-risk trees
+This project is private and proprietary.
 
-### 2. Civic Issue Reporting
-- **Easy Submission**: Report environmental issues with photos and location
-- **Priority Tracking**: Issues categorized by urgency (Low, Medium, High, Critical)
-- **Status Updates**: Track resolution progress (Open, In Progress, Resolved)
-- **Categories**: Irrigation, waste management, infrastructure, and more
+## 👥 Team
 
-### 3. Eco-Impact Intelligence
-- **Water Conservation**: Track liters saved through efficient irrigation
-- **Carbon Offset**: Calculate CO₂ sequestration from campus trees
-- **Green Score**: Campus-wide sustainability rating (0-100)
-- **Department Leaderboards**: Gamified sustainability competition
-
----
-
-## 🎯 Demo Flow for Judges
-
-### Recommended Evaluation Path
-
-1. **Start at Landing Page** (`/`)
-   - View project overview and features
-   - Understand the value proposition
-
-2. **Explore Dashboard** (`/dashboard`)
-   - See real-time metrics (trees monitored, issues, water saved)
-   - View health trend charts and weekly activity graphs
-   - Check recent activity feed
-
-3. **Visit Trees Section** (`/trees`)
-   - Browse tree inventory with filters
-   - Upload a tree photo to test AI analysis
-   - View tree health status and location data
-
-4. **Check Civic Issues** (`/issues`)
-   - View reported issues with status tracking
-   - Submit a new issue (optional)
-   - Filter by priority and status
-
-5. **Review Impact Metrics** (`/impact`)
-   - See environmental impact calculations
-   - View department leaderboards
-   - Understand sustainability scoring
-
----
-
-## 🛠️ Technology Stack
-
-- **Framework**: Next.js 14 (React)
-- **Styling**: Tailwind CSS + shadcn/ui components
-- **Authentication**: Clerk
-- **AI Analysis**: Google Gemini API
-- **Charts**: Recharts
-- **Icons**: Lucide React
-
----
-
-## 📱 Responsive Design
-
-The application is fully responsive:
-- **Desktop**: Full sidebar navigation
-- **Mobile/Tablet**: Collapsible mobile menu with hamburger icon
-
----
-
-## 🔑 Authentication
-
-- Sign up/Sign in functionality via Clerk
-- User profiles with email display
-- Secure session management
-
----
-
-## 🌟 Unique Selling Points
-
-1. **AI-Powered Tree Health Analysis** - Automated assessment using computer vision
-2. **Gamification** - Department leaderboards encourage participation
-3. **Real-Time Tracking** - Live updates on sustainability metrics
-4. **Comprehensive Platform** - Trees + Civic Issues + Impact in one place
-5. **Campus-Specific** - Designed for college/university environments
-
----
-
-## 📊 Sample Data
-
-The prototype includes realistic mock data to demonstrate:
-- 1,247 trees monitored
-- 89% survival rate
-- 24,560 liters of water saved
-- 42 civic issues (28 resolved, 14 open)
-- Green Score: 87/100
-
----
-
-## 🎨 Design Highlights
-
-- **Modern UI**: Clean, professional interface with consistent design system
-- **Data Visualization**: Interactive charts and graphs
-- **Status Indicators**: Color-coded badges for quick status recognition
-- **Accessibility**: High contrast, readable fonts, semantic HTML
-
----
-
-## 📞 Support
-
-For questions or issues during evaluation, please refer to:
-- **DEMO_GUIDE.md** - Detailed walkthrough with screenshots
-- **Code Documentation** - Inline comments in source files
-
----
-
-## 🏆 Hackathon Context
-
-This is a prototype developed for a sustainability-focused hackathon, demonstrating how technology can drive measurable environmental impact on college campuses.
-
-**Built with ❤️ for a greener future**
+Developed by Team RootSense

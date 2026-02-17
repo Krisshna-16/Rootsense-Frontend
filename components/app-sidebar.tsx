@@ -2,9 +2,10 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { LayoutDashboard, TreePine, AlertTriangle, BarChart3, Leaf, Home, Shield } from "lucide-react"
+import { LayoutDashboard, TreePine, AlertTriangle, BarChart3, Leaf, Home, Shield, Map as MapIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { UserButton, useUser } from "@clerk/nextjs"
+import { VintageLogo } from "@/components/vintage-logo"
 
 const navigation = [
   { name: "Home", href: "/", icon: Home },
@@ -12,6 +13,7 @@ const navigation = [
   { name: "Trees", href: "/trees", icon: TreePine },
   { name: "Civic Issues", href: "/issues", icon: AlertTriangle },
   { name: "Impact", href: "/impact", icon: BarChart3 },
+  { name: "Map", href: "/map", icon: MapIcon },
   { name: "Admin", href: "/admin", icon: Shield },
 ]
 
@@ -22,11 +24,8 @@ export function AppSidebar() {
   return (
     <aside className="fixed inset-y-0 left-0 z-50 hidden w-64 flex-col border-r border-[#2d5016] bg-[#1a3a1a] lg:flex">
       {/* Logo */}
-      <div className="flex h-16 items-center gap-2 border-b border-[#2d5016] px-6">
-        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#d4af37]">
-          <Leaf className="h-5 w-5 text-[#1a3a1a]" />
-        </div>
-        <span className="text-lg font-bold text-white">ROOTSENSE</span>
+      <div className="flex h-32 items-center justify-center border-b border-[#2d5016] py-4 bg-[#1a3a1a]">
+        <VintageLogo width={60} height={90} />
       </div>
 
       {/* Navigation */}

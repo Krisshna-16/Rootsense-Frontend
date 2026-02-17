@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Leaf, TreeDeciduous, AlertCircle, TrendingUp, Shield, Users, Droplet, CheckCircle } from "lucide-react"
+import { VintageLogo } from "@/components/vintage-logo"
 
 export default function LandingPage() {
   return (
@@ -9,10 +10,8 @@ export default function LandingPage() {
       <header className="bg-[#1a3a1a] border-b border-[#2d5016]">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#d4af37]">
-              <Leaf className="h-6 w-6 text-[#1a3a1a]" />
-            </div>
-            <span className="text-xl font-bold text-white">ROOTSENSE</span>
+            <VintageLogo width={60} height={90} />
+            {/* <span className="text-xl font-bold text-white">ROOTSENSE</span> */}
           </div>
           <nav className="hidden items-center gap-6 md:flex">
             <Link href="/dashboard" className="text-sm font-medium text-[#e8e6d9] transition-colors hover:text-white">
@@ -281,10 +280,8 @@ export default function LandingPage() {
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#d4af37]">
-                <Leaf className="h-4 w-4 text-[#1a3a1a]" />
-              </div>
-              <span className="font-bold text-white">ROOTSENSE</span>
+              <VintageLogo width={60} height={90} />
+              {/* <span className="font-bold text-white">ROOTSENSE</span> */}
             </div>
             <p className="text-sm text-[#e8e6d9]">
               Hackathon Project - Sustainability Intelligence for Campuses

@@ -1,4 +1,5 @@
 import { SignIn } from "@clerk/nextjs";
+import { VintageLogo } from "@/components/vintage-logo"
 
 export default function Page() {
     return (
@@ -18,8 +19,11 @@ export default function Page() {
             <div className="relative z-10 w-full max-w-md px-4 animate-fade-in">
                 <div className="bg-white rounded-2xl shadow-2xl p-8">
                     <div className="text-center mb-6">
+                        <div className="flex justify-center mb-4">
+                            <VintageLogo width={60} height={90} />
+                        </div>
                         <h1 className="text-3xl font-bold text-[#2d5f3f] mb-2">
-                            Welcome Back 🌿
+                            Welcome Back
                         </h1>
                         <p className="text-gray-600">
                             The best app for your plants
